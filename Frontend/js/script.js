@@ -1,11 +1,7 @@
-const { json } = require("stream/consumers")
-const crypto = require('crypto');
-
 // Elementos do login
 const login = document.querySelector(".login")
 const loginForm = login.querySelector(".login__form")
 const loginInput = login.querySelector(".login__input")
-
 
 // Elementos do chat
 const chat = document.querySelector(".chat")
@@ -58,9 +54,9 @@ const getRandomColor = () => {
 
 const scrollScreen = () =>{
       window.scrollTo({
-        top: document.body.scrollHeight
+        top: document.body.scrollHeight,
         behavior: "smooth"
-      })
+      });
 
 }
 
@@ -89,7 +85,7 @@ login.style.display = "none"
 chat.style.display = "flex"
 
 
-websocket = new WebSocket("ws://localhost:8080")
+websocket = new WebSocket("wss://web-chat-lgr3.onrender.com")
 websocket.onmessage = processMessage
 
 }
